@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Form Editor</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js"><\/script>');</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/form.css">
+</head>
+ 
+<body>
+  <div class="container">
+    <h2 class="text-center">Редактирование формы</h2>
+    <form method="post" action="" id="formFields" novalidate>
+      <div class="form-group">
+        <input type="text" class="form-control form-control-sm" name="title_form" placeholder="Заголовок формы" required>
+        <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control form-control-sm" name="description_form" rows="3" placeholder="Описание формы" required></textarea>
+      </div>
+      <div class="fields_form">
+        <fieldset class="fieldset mt-3">
+          <legend>Поля формы</legend>
+          <div class="headline-type-fields form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control form-control-sm" name="field_header" placeholder="Заголовок поля" required>
+            </div>
+            <div class="form-group col-md-6">
+              <select class="form-control form-control-sm" name="field_type" required>
+                <option value="" selected disabled>Выберите тип поля...</option>
+                <option value="text_string">Текст - строка</option>
+                <option value="text_paragraph">Текст - абзац</option>
+                <option value="one_of_list">Один из списка</option>
+                <option value="several_of_list">Несколько из списка</option>
+                <option value="drop-down_list">Раскрывающийся список</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-input"></div>
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="req_question" checked>Обязательный вопрос
+                </label>
+              </div>
+            </div>
+            <div class="col" style="text-align:right;">
+              <a href="#" class="remove_field">- Удалить поле</a>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <button type="button" class="btn btn-outline-primary" name="btn_close">Закрыть</button>
+          <button type="submit" class="btn btn-outline-primary" name="btn_save">Сохранить</button>
+        </div>
+        <div class="col" style="text-align:right;">
+          <a href="#" class="add_field">+ Добавить поле</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="js/form-editor.js"></script>
+</body>
+
+</html>
