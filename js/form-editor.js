@@ -6,6 +6,7 @@
       event.preventDefault();
       event.stopPropagation();
       form.addClass('was-validated');
+      $('#myModal').modal();
       return false;
     }
     form.removeClass('was-validated');
@@ -14,7 +15,7 @@
 
   $(document).on('submit', '#formFields', function () {
     var form = $(this);
-    if (varvalidateFormResult(form)) {} else {}
+    if (varvalidateFormResult(form)) {} 
   });
 
   // обработчик для "кнопки" Удалить поле

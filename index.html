@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Form Editor</title>
+  <title>Редактор форм</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
@@ -15,26 +15,25 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/form.css">
 </head>
- 
-<body>
-  <div class="container">
-    <h2 class="text-center">Редактирование формы</h2>
+
+<body class="bg-light">
+  <div class="container p-3">
+    <h3 class="text-center mb-3">Редактирование формы</h3>
     <form method="post" action="" id="formFields" novalidate>
       <div class="form-group">
-        <input type="text" class="form-control form-control-sm" name="title_form" placeholder="Заголовок формы" required>
-        <div class="invalid-feedback">
-            Please choose a username.
-          </div>
+        <input type="text" class="form-control form-control-sm" name="title_form" placeholder="Заголовок формы"
+          required>
       </div>
       <div class="form-group">
-        <textarea class="form-control form-control-sm" name="description_form" rows="3" placeholder="Описание формы" required></textarea>
+        <textarea class="form-control form-control-sm" name="description_form" rows="3" placeholder="Описание формы"></textarea>
       </div>
       <div class="fields_form">
-        <fieldset class="fieldset mt-3">
+        <fieldset class="fieldset mt-3 card-body">
           <legend>Поля формы</legend>
           <div class="headline-type-fields form-row">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control form-control-sm" name="field_header" placeholder="Заголовок поля" required>
+              <input type="text" class="form-control form-control-sm" name="field_header" placeholder="Заголовок поля"
+                required>
             </div>
             <div class="form-group col-md-6">
               <select class="form-control form-control-sm" name="field_type" required>
@@ -64,14 +63,24 @@
       </div>
       <div class="row mt-3">
         <div class="col">
-          <button type="button" class="btn btn-outline-primary" name="btn_close">Закрыть</button>
           <button type="submit" class="btn btn-outline-primary" name="btn_save">Сохранить</button>
+          <button type="button" class="btn btn-outline-danger" name="btn_close">Закрыть</button>
         </div>
         <div class="col" style="text-align:right;">
           <a href="#" class="add_field">+ Добавить поле</a>
         </div>
       </div>
     </form>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" id="myModal" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content text-center">
+          <strong class="pb-4 pt-4" style="font-size: 18px">
+            Перед сохранением формы необходимо заполнить все поля отмеченные красным цветом
+          </strong>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="js/form-editor.js"></script>
 </body>
