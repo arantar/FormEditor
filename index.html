@@ -19,24 +19,24 @@
 <body class="bg-light">
   <div class="container p-3">
     <h3 class="text-center mb-3">Редактирование формы</h3>
-    <form method="post" action="" id="formFields" novalidate>
+    <form method="post" action="" id="formFields" role="form" novalidate>
       <div class="form-group">
-        <input type="text" class="form-control form-control-sm" name="title_form" placeholder="Заголовок формы"
+        <input type="text" class="form-control form-control-sm shadow-sm" name="titleForm" placeholder="Заголовок формы"
           required>
       </div>
       <div class="form-group">
-        <textarea class="form-control form-control-sm" name="description_form" rows="3" placeholder="Описание формы"></textarea>
+        <textarea class="form-control form-control-sm shadow-sm" name="descriptionForm" placeholder="Описание формы"></textarea>
       </div>
       <div class="fields_form">
-        <fieldset class="fieldset mt-3 card-body">
+        <fieldset class="fieldset card-body shadow-sm mt-3">
           <legend>Поля формы</legend>
           <div class="headline-type-fields form-row">
             <div class="form-group col-md-6">
-              <input type="text" class="form-control form-control-sm" name="field_header" placeholder="Заголовок поля"
+              <input type="text" class="form-control form-control-sm" name="fieldHeader" placeholder="Заголовок поля"
                 required>
             </div>
             <div class="form-group col-md-6">
-              <select class="form-control form-control-sm" name="field_type" required>
+              <select class="form-control form-control-sm" name="fieldType" required>
                 <option value="" selected disabled>Выберите тип поля...</option>
                 <option value="text_string">Текст - строка</option>
                 <option value="text_paragraph">Текст - абзац</option>
@@ -51,23 +51,23 @@
             <div class="col">
               <div class="form-check">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="req_question" checked>Обязательный вопрос
+                  <input type="checkbox" class="form-check-input" name="reqQuestion" checked>Обязательный вопрос
                 </label>
               </div>
             </div>
-            <div class="col" style="text-align:right;">
-              <a href="#" class="remove_field text-danger">- Удалить поле</a>
+            <div class="col">
+              <a href="#" class="remove-field d-flex justify-content-end text-danger">- Удалить поле</a>
             </div>
           </div>
         </fieldset>
       </div>
       <div class="row mt-3">
         <div class="col">
-          <button type="submit" class="btn btn-outline-primary" name="btn_save">Сохранить</button>
-          <button type="button" class="btn btn-outline-danger" name="btn_close">Закрыть</button>
+          <button type="submit" class="btn btn-outline-primary shadow-sm" name="btnSave">Сохранить</button>
+          <button type="button" class="btn btn-outline-danger shadow-sm" name="btnClose">Закрыть</button>
         </div>
-        <div class="col" style="text-align:right;">
-          <a href="#" class="add_field">+ Добавить поле</a>
+        <div class="col">
+          <a href="#" class="add-field d-flex justify-content-end">+ Добавить поле</a>
         </div>
       </div>
     </form>

@@ -31,7 +31,7 @@
   });
 
   // обработчик для "кнопки" Удалить поле
-  $(document).on('click', 'a.remove_field', function () {
+  $(document).on('click', 'a.remove-field', function () {
     // проверяем является ли удаляемый элемент не последним на странице
     if ($('fieldset.mt-3').length > 1) {
       $(this).closest('fieldset.mt-3').remove();
@@ -39,19 +39,19 @@
   });
 
   // обработчик для "кнопки" Добавить поле
-  $(document).on('click', 'a.add_field', function () {
+  $(document).on('click', 'a.add-field', function () {
     var fields = $('fieldset.mt-3:first').clone();
     // очищаем поле Заголовок поля при клонировании
-    fields.find('input[name=field_header]').val('');
+    fields.find('input[name=fieldHeader]').val('');
     // удаляем элемент содержащий в себе поле для вопросов или placeholder
     fields.find('div.field-input').html('');
     // устанавливаем checkbox Обязательный вопрос на true
-    fields.find('input[name=req_question]').prop('checked', true);
+    fields.find('input[name=reqQuestion]').prop('checked', true);
     $(fields).appendTo('div.fields_form');
   });
 
   // обработчик для отслеживания изменения выбора Типа поля
-  $(document).on('change', 'select[name=field_type]', function () {
+  $(document).on('change', 'select[name=fieldType]', function () {
     var placeholder = $('<input>', {
       type: 'text',
       class: 'field-placeholder mb-3 form-control form-control-sm',
@@ -60,7 +60,7 @@
     });
     var fieldListQuestions = $('<textarea>', {
       class: 'field-questions mb-3 form-control form-control-sm',
-      name: 'field_list_questions',
+      name: 'fieldListQuestions',
       required: ''
     });
 
