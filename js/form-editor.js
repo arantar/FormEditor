@@ -1,11 +1,10 @@
-(function () {
+;(function () {
   'use strict';
-
   /* 
     метод для валидации введенных значений в поля формы,
     что по крайне мере не будет отправлена пустая форма
   */
-  function varvalidateFormResult(form) {
+  function validateForm(form) {
     if (form[0].checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
@@ -25,7 +24,7 @@
 
   $(document).on('submit', '#formFields', function () {
     var form = $(this);
-    if (varvalidateFormResult(form)) {
+    if (validateForm(form)) {
       // отправка формы на сервер
     }
   });
