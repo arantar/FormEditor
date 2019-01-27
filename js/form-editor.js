@@ -1,21 +1,33 @@
 (function () {
   'use strict';
-  
-  var varvalidateFormResult = function (form) {
+
+  /* 
+    метод для валидации введенных значений в поля формы,
+    что по крайне мере не будет отправлена пустая форма
+  */
+  function varvalidateFormResult(form) {
     if (form[0].checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
       form.addClass('was-validated');
-      $('#myModal').modal();
+      $('#emptyForm').modal();
       return false;
     }
     form.removeClass('was-validated');
     return true;
-  };
+  }
+
+  // обработчик для изменения размера полей типа textarea
+  $(document).on('input', 'textarea', function () {
+    $(this).css('height', 'auto');
+    $(this).height(this.scrollHeight);
+  });
 
   $(document).on('submit', '#formFields', function () {
     var form = $(this);
-    if (varvalidateFormResult(form)) {} 
+    if (varvalidateFormResult(form)) {
+      // отправка формы на сервер
+    }
   });
 
   // обработчик для "кнопки" Удалить поле
@@ -49,7 +61,6 @@
     var fieldListQuestions = $('<textarea>', {
       class: 'field-questions mb-3 form-control form-control-sm',
       name: 'field_list_questions',
-      row: '3',
       required: ''
     });
 
